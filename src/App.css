@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+@media only screen and (max-width: 900px) {
+  .choices {
+    font-size: 11px;
+}
+}
+
+
 button {
   color: white;
   height: 25px;
@@ -44,6 +51,7 @@ input {
   border-radius: 20px;
   padding: 8px;
   color: white;
+  margin-top: 5px;
 
 }
 
@@ -55,6 +63,11 @@ input {
   border: 2px 2px 2px 2px goldenrod;
 }
 
+.choice-cont{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .afterAnswer{
 
   justify-content: center;

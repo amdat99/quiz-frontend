@@ -68,7 +68,7 @@ function App() {
     <div className="App">
 
   {name?
-<React.Fragment>
+<React.Fragment >
  
  <h4 style={{marginLeft:'80%'}}>hello {name}</h4>
  <p>Score: {score}/5</p>
@@ -80,12 +80,12 @@ function App() {
     <div key={data.question}>
     <p style={{fontSize:'20px'}}>{data.question}</p>
   {afterAnswer? null
-    : <React.Fragment>
+    : <div className="choice-cont">
     <span onClick={()=>onAnswer(data.choices[0],data.answer)} className="choices">{data.choices[0]}</span>
     <span onClick={()=>onAnswer(data.choices[1],data.answer)} className="choices">{data.choices[1]}</span>
     <span  onClick={()=>onAnswer(data.choices[2],data.answer)} className="choices">{data.choices[2]}</span>
     <span onClick={()=>onAnswer(data.choices[3],data.answer)} className="choices">{data.choices[3]}</span>
-    </React.Fragment>
+    </div>
   }
       </div>
     )
@@ -102,7 +102,10 @@ function App() {
    <button style={{width:'130px'}} onClick={nextQuestion}>Next Question</button>
 :null}
    {question === 5 ?
-  <button onClick={reset}>Reset</button>
+   <div>
+   <span > You scored {score} out of 5</span>
+  <button style={{marginLeft:'5px'}} onClick={reset}>Reset</button>
+  </div>
   :null}
    </div>
   :null}
